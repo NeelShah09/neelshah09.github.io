@@ -1,0 +1,465 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Aryan-Inspired Yellow/Black Liquid Glass Theme */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 50 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 50 100% 70%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 10%;
+    --ring: 50 100% 60%;
+
+    --radius: 0.5rem;
+    
+    /* Enhanced Yellow Liquid Glass Effects */
+    --glass-bg: 0 0% 8% / 0.6;
+    --glass-border: 50 100% 60% / 0.3;
+    --gradient-primary: linear-gradient(135deg, hsl(50 100% 60% / 0.2), hsl(45 100% 55% / 0.15));
+    --gradient-glow: linear-gradient(135deg, hsl(50 100% 70% / 0.1), hsl(45 100% 65% / 0.08));
+    --shadow-glow: 0 0 40px hsl(50 100% 60% / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.8);
+    --backdrop-blur: blur(16px);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Pure black with bright yellow accents */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 99%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 99%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 99%;
+    --primary: 50 100% 65%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 99%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 0 0% 2%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 99%;
+    --border: 0 0% 15%;
+    --input: 0 0% 6%;
+    --ring: 50 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(0 0% 3%) 50%, 
+      hsl(0 0% 7%) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Yellow Tech Grid Pattern Overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(hsl(50 100% 60% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(50 100% 60% / 0.06) 1px, transparent 1px),
+      radial-gradient(circle at 25% 25%, hsl(50 100% 60% / 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(45 100% 55% / 0.08) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 100px 100px, 120px 120px;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite;
+  }
+  
+  /* Golden Particle System */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsl(50 100% 60% / 0.12) 2px, transparent 2px),
+      radial-gradient(circle at 80% 30%, hsl(45 100% 55% / 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 30% 80%, hsl(50 100% 70% / 0.06) 1px, transparent 1px),
+      radial-gradient(circle at 70% 70%, hsl(45 100% 65% / 0.04) 1px, transparent 1px);
+    background-size: 180px 180px, 140px 140px, 160px 160px, 200px 200px;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 15s ease-in-out infinite reverse;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl border rounded-lg shadow-lg relative overflow-hidden;
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary-glow)), transparent);
+    opacity: 0.6;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-2xl border relative overflow-hidden;
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  .glass-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary-glow)), transparent);
+    opacity: 0.4;
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .tech-border {
+    position: relative;
+  }
+  
+  .tech-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+  }
+  
+  .data-viz-animation {
+    animation: dataFlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes dataFlow {
+    0%, 100% { opacity: 0.5; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(10px); }
+  }
+  
+  .neural-network-bg {
+    background-image: radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.1) 0%, transparent 50%);
+  }
+  
+  .matrix-rain {
+    background-image: linear-gradient(0deg, transparent 24%, hsl(50 100% 60% / 0.1) 25%, hsl(50 100% 60% / 0.1) 26%, transparent 27%, transparent 74%, hsl(45 100% 55% / 0.08) 75%, hsl(45 100% 55% / 0.08) 76%, transparent 77%, transparent);
+    background-size: 20px 20px;
+    animation: matrix-fall 10s linear infinite;
+  }
+  
+  @keyframes matrix-fall {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+  
+  .pulse-data {
+    animation: pulseData 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseData {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  .ml-gradient {
+    background: linear-gradient(45deg, 
+      hsl(var(--primary) / 0.1) 0%, 
+      hsl(var(--accent) / 0.1) 25%, 
+      hsl(var(--secondary) / 0.1) 50%, 
+      hsl(var(--primary) / 0.1) 75%, 
+      hsl(var(--accent) / 0.1) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .data-node {
+    position: relative;
+  }
+  
+  .data-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: nodeGlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes nodeGlow {
+    0%, 100% { box-shadow: 0 0 5px hsl(var(--primary)); }
+    50% { box-shadow: 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--accent)); }
+  }
+
+  /* Additional Techy Effects */
+  .cyber-border {
+    position: relative;
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+  
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      hsl(var(--primary)) 0%, 
+      transparent 25%, 
+      transparent 75%, 
+      hsl(var(--accent)) 100%);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cyber-border:hover::before {
+    opacity: 1;
+  }
+  
+  .terminal-text {
+    font-family: 'Courier New', monospace;
+    color: hsl(var(--primary));
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+  
+  .cybersec-card {
+    @apply glass-card;
+    background: linear-gradient(135deg, 
+      hsl(var(--card) / 0.9) 0%, 
+      hsl(0 0% 6% / 0.8) 100%);
+    border: 1px solid hsl(var(--primary) / 0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .aryan-style-card {
+    @apply glass-card;
+    background: linear-gradient(135deg, 
+      hsl(0 0% 8% / 0.95) 0%, 
+      hsl(0 0% 4% / 0.9) 100%);
+    border: 1px solid hsl(50 100% 60% / 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .aryan-style-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(50 100% 60%) 50%, 
+      transparent 100%);
+    opacity: 0.8;
+  }
+  
+  .cybersec-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--primary)) 50%, 
+      transparent 100%);
+    animation: scan-line 4s ease-in-out infinite;
+  }
+  
+  @keyframes scan-line {
+    0% { left: -100%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  .data-stream {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .data-stream::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--primary) / 0.1) 30%, 
+      hsl(var(--accent) / 0.1) 70%, 
+      transparent 100%);
+    animation: data-flow 3s ease-in-out infinite;
+  }
+  
+  @keyframes data-flow {
+    0% { right: -100%; }
+    100% { right: 100%; }
+  }
+  
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--primary) / 0.1) 50%, 
+      transparent 100%);
+    animation: scan 3s ease-in-out infinite;
+  }
+  
+  @keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  .hologram-effect {
+    background: linear-gradient(45deg, 
+      hsl(var(--primary) / 0.05) 0%, 
+      hsl(var(--accent) / 0.05) 50%, 
+      hsl(var(--primary) / 0.05) 100%);
+    background-size: 200% 200%;
+    animation: hologram 4s ease-in-out infinite;
+  }
+  
+  @keyframes hologram {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Yellow-specific effects inspired by Aryan's design */
+  .golden-glow {
+    box-shadow: 
+      0 0 20px hsl(50 100% 60% / 0.3),
+      0 0 40px hsl(50 100% 60% / 0.2),
+      inset 0 1px 0 hsl(50 100% 60% / 0.1);
+  }
+  
+  .golden-text {
+    color: hsl(50 100% 60%);
+    text-shadow: 
+      0 0 10px hsl(50 100% 60% / 0.5),
+      0 0 20px hsl(50 100% 60% / 0.3);
+  }
+  
+  .yellow-accent-border {
+    border: 1px solid hsl(50 100% 60% / 0.4);
+    background: linear-gradient(135deg, 
+      hsl(0 0% 8% / 0.9) 0%, 
+      hsl(0 0% 4% / 0.95) 100%);
+  }
+  
+  .yellow-accent-border:hover {
+    border-color: hsl(50 100% 60% / 0.6);
+    box-shadow: 0 0 20px hsl(50 100% 60% / 0.2);
+  }
+  
+  .tech-grid-yellow {
+    background-image: 
+      linear-gradient(hsl(50 100% 60% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(50 100% 60% / 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
