@@ -83,35 +83,28 @@ const AboutSection = () => {
                   {/* Introduction */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      I'm a passionate Data Scientist and AI/ML enthusiast with a unique blend of academic excellence, 
-                      industry experience, and innovative thinking, dedicated to transforming data into intelligent solutions.
+                      I’m a data and AI enthusiast driven by curiosity to uncover patterns and build solutions that make sense of complexity. Over the past few years, I’ve worked across analytics, machine learning, and computer vision — translating raw data into models, dashboards, and insights that empower better decisions.
                     </p>
                   </div>
 
                   {/* Paragraph 1 - Academic Foundation */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      My journey in data science began with a solid academic foundation, earning my BTech from the University of Mumbai 
-                      with an exceptional 9.26/10.0 GPA. Currently pursuing MS in Data Science at Indiana University Bloomington with 
-                      a 3.95/4.0 GPA, I specialize in machine learning, statistical modeling, and AI research methodologies.
+                      My journey began as an analyst, where I learned how to balance precision with business context. Since then, I’ve explored the technical side of AI through hands-on experience in model optimization, TensorRT conversion, and applied research in computer vision. I’m equally passionate about visualization — using tools like Power BI, Tableau, and Gephi to turn technical findings into clear, visual narratives.
                     </p>
                   </div>
 
                   {/* Paragraph 2 - Professional Experience */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      With 2+ years of industry experience as Data Scientist and Deputy Manager at ICICI Bank, I led cross-functional 
-                      teams delivering impactful projects that achieved 5% operational efficiency boost and INR 1M annual savings. 
-                      My recent internship at SproutsAI showcased innovation through multi-agent AI platforms that reduced time-to-insight by 80%.
+                      I believe the most impactful data work happens at the intersection of creativity and logic. Whether I’m optimizing a model or designing a dashboard, I aim to make technology more human, explainable, and accessible.
                     </p>
                   </div>
 
                   {/* Paragraph 3 - Innovation & Impact */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      My passion for innovation culminated in leading the award-winning Smart Hospital Multi-Agent System, earning 
-                      2nd Runner-up in Luddy Hackathon 2025 among 50+ teams. I specialize in transforming complex data into actionable 
-                      business insights, bridging the gap between cutting-edge research and real-world applications.
+                    Currently, I’m seeking opportunities in AI Engineering, Data Science, or Machine Learning, where I can continue building intelligent systems that create measurable impact.
                     </p>
                   </div>
                 </div>

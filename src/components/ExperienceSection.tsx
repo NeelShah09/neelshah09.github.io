@@ -11,11 +11,11 @@ const ExperienceSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary to-accent"></div>
+            <div className="absolute left-8 top-0 bottom-10 w-px bg-gradient-to-b from-primary to-accent"></div>
             
             <div className="space-y-12">
               {/* Current Education */}
-              <div className="relative flex items-start space-x-8">
+              {/* <div className="relative flex items-start space-x-8">
                 <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
                   <GraduationCap className="h-8 w-8 text-primary" />
                 </div>
@@ -31,7 +31,7 @@ const ExperienceSection = () => {
                     business and research environments.
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* SproutsAI Internship */}
               <div className="relative flex items-start space-x-8">
@@ -109,7 +109,7 @@ const ExperienceSection = () => {
               </div>
 
               {/* Bachelor's Education */}
-              <div className="relative flex items-start space-x-8">
+              {/* <div className="relative flex items-start space-x-8">
                 <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
                   <GraduationCap className="h-8 w-8 text-primary" />
                 </div>
@@ -124,7 +124,7 @@ const ExperienceSection = () => {
                     computer science fundamentals, programming, and analytical problem-solving.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
