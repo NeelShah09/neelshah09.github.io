@@ -199,7 +199,7 @@ const HeroSection = () => {
           <div className="flex flex-col items-center lg:items-center space-y-8">
             {/* Profile Image - No box, bigger size */}
             <div className="relative">
-              <div className="w-64 h-64 rounded-full overflow-hidden border-2 border-primary/20">
+              <div className="w-96 h-96 rounded-full overflow-hidden border-2 border-primary/20">
                 <img 
                   src={neelAvatar} 
                   alt="Neel Shah" 
@@ -210,12 +210,22 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="w-64">
+            <div className="w-96">
               <Button 
                 className="w-full golden-glow hover:bg-primary/90 transition-all duration-300"
+                onClick={() => {
+                  // Create a temporary link element and trigger download
+                  const link = document.createElement('a');
+                  link.href = '/Neel_Sachin_Shah_Resume.pdf'; // Update this path to your actual CV file
+                  link.download = 'Neel_Sachin_Shah_Resume.pdf';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <Download className="mr-2 h-4 w-4" />
-                Download CV
+                Download Resume
               </Button>
             </div>
           </div>
