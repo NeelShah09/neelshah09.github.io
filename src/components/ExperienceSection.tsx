@@ -1,130 +1,169 @@
-import { Briefcase, GraduationCap } from "lucide-react";
+import { useState } from "react";
+import { Briefcase, GraduationCap, Cloud, Brain, Database, Wrench } from "lucide-react";
 
 const ExperienceSection = () => {
+  const [selectedExperience, setSelectedExperience] = useState(0);
+
+  const experiences = [
+    {
+      id: 0,
+      title: "AI & ML Intern",
+      company: "SproutsAI Inc.",
+      location: "California, USA",
+      date: "July 2025 - Aug 2025",
+      icon: Brain,
+      description: "Engineered a multi-agent AI platform translating natural language to MongoDB queries with automated Plotly visualizations, reducing time-to-insight by 80% and improving query accuracy by 50% using Neo4j and Qdrant for context retrieval.",
+      achievements: [
+        "Engineered a multi-agent AI platform translating natural language to MongoDB queries with automated Plotly visuals, cutting time-to-insight by 80% across 128+ collections.",
+        "Improved query accuracy by 50% via a knowledge-graph based context retriever using Neo4j and Qdrant to map relationships across collections, combined with vector embeddings and community detection.",
+        "Empowered non-technical users to perform complex data analysis through self-service analytics, significantly reducing reliance on data engineering teams."
+      ],
+      technologies: ["Multi-Agent AI", "MongoDB", "Neo4j", "Qdrant", "Python", "Plotly"]
+    },
+    {
+      id: 1,
+      title: "Deputy Manager II",
+      company: "ICICI Bank Limited",
+      location: "Core Banking Department | India",
+      date: "June 2022 - July 2024",
+      icon: Database,
+      description: "Led cross-functional teams to develop and productionize ETL pipelines for predictive load forecasting on 140M+ transactions. Achieved 5% improvement in processing efficiency and INR 1M annual savings through data optimization and automation.",
+      achievements: [
+        "Led development of ETL pipelines processing 140M+ transactions daily",
+        "Achieved 5% improvement in processing efficiency across banking operations",
+        "Generated INR 1M annual savings through data optimization and automation",
+        "Implemented predictive load forecasting models for banking infrastructure",
+        "Managed cross-functional teams for large-scale data infrastructure projects"
+      ],
+      technologies: ["ETL Pipelines", "Apache Airflow", "Oracle SQL", "Predictive Analytics", "Python"]
+    },
+    {
+      id: 2,
+      title: "Computer Vision Intern",
+      company: "Wobot Intelligence",
+      location: "Remote, India",
+      date: "Sep 2021 - Jan 2022",
+      icon: Cloud,
+      description: "Trained and deployed VGG19 model for safety gear detection achieving 93% accuracy. Developed REST API in Go for RTSP streaming from 100+ videos and implemented OpenCV algorithms for anomalous frame filtering.",
+      achievements: [
+        "Achieved 93% accuracy in safety gear detection using VGG19 model",
+        "Developed REST API in Go for real-time video streaming from 100+ sources",
+        "Implemented OpenCV algorithms for anomalous frame detection and filtering",
+        "Optimized computer vision pipeline for real-time processing",
+        "Deployed machine learning models for production use"
+      ],
+      technologies: ["Computer Vision", "TensorFlow", "OpenCV", "Go", "VGG19", "RTSP"]
+    }
+  ];
+
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-16 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
-          Experience & Education
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 gradient-text">
+          Experience
         </h2>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-10 w-px bg-gradient-to-b from-primary to-accent"></div>
-            
-            <div className="space-y-12">
-              {/* Current Education */}
-              {/* <div className="relative flex items-start space-x-8">
-                <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
-                  <GraduationCap className="h-8 w-8 text-primary" />
-                </div>
-                <div className="flex-1 glass-card p-8 hover:glow-effect transition-all duration-300 neural-network-bg">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary">MS Data Science @ Indiana University</h3>
-                    <span className="text-accent font-medium">Aug 2024 - May 2026</span>
-                  </div>
-                  <p className="text-muted-foreground mb-3">Luddy School of Informatics, Computing and Engineering | GPA: 3.95/4.0</p>
-                  <p className="text-foreground/80 leading-relaxed">
-                    Advanced coursework in machine learning, statistical modeling, deep learning frameworks, 
-                    and AI research methodologies. Focus on practical applications of data science in 
-                    business and research environments.
-                  </p>
-                </div>
-              </div> */}
-
-              {/* SproutsAI Internship */}
-              <div className="relative flex items-start space-x-8">
-                <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
-                  <Briefcase className="h-8 w-8 text-primary" />
-                </div>
-                <div className="flex-1 glass-card p-8 hover:glow-effect transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary">AI & ML Intern @ SproutsAI Inc.</h3>
-                    <span className="text-accent font-medium">July 2025 - Aug 2025</span>
-                  </div>
-                  <p className="text-muted-foreground mb-3">California, USA</p>
-                  <p className="text-foreground/80 leading-relaxed mb-4">
-                    Engineered a multi-agent AI platform translating natural language to MongoDB queries 
-                    with automated Plotly visualizations, reducing time-to-insight by 80% and improving 
-                    query accuracy by 50% using Neo4j and Qdrant for context retrieval.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Multi-Agent AI</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">MongoDB</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Neo4j</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Qdrant</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* ICICI Bank Experience */}
-              <div className="relative flex items-start space-x-8">
-                <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
-                  <Briefcase className="h-8 w-8 text-primary" />
-                </div>
-                <div className="flex-1 glass-card p-8 hover:glow-effect transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary">Deputy Manager II @ ICICI Bank Limited</h3>
-                    <span className="text-accent font-medium">June 2022 - July 2024</span>
-                  </div>
-                  <p className="text-muted-foreground mb-3">Core Banking Department (Data Science & Predictive Analysis) | India</p>
-                  <p className="text-foreground/80 leading-relaxed mb-4">
-                    Led cross-functional teams to develop and productionize ETL pipelines for predictive load 
-                    forecasting on 140M+ transactions. Achieved 5% improvement in processing efficiency and 
-                    INR 1M annual savings through data optimization and automation.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">ETL Pipelines</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Apache Airflow</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Oracle SQL</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Predictive Analytics</span>
+        <div className="max-w-7xl mx-auto">
+          <div className="glass-card rounded-xl overflow-hidden">
+            <div className="grid lg:grid-cols-3 gap-0 h-[75vh] lg:h-auto lg:max-h-[75vh] min-h-0">
+              {/* Left Navigation Panel */}
+              <div className="lg:col-span-1 bg-card/50 border-r border-border/50 overflow-y-auto min-h-0 h-full lg:h-auto">
+                <div className="p-4">
+                  <div className="space-y-3">
+                    {experiences.map((exp, index) => {
+                      const IconComponent = exp.icon;
+                      const isSelected = selectedExperience === index;
+                      
+                      return (
+                        <div
+                          key={exp.id}
+                          onClick={() => setSelectedExperience(index)}
+                          className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
+                            isSelected 
+                              ? 'bg-primary/20 border-l-4 border-primary' 
+                              : 'hover:bg-muted/30 border-l-4 border-transparent'
+                          }`}
+                        >
+                          <div className="flex items-start space-x-3">
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                              isSelected ? 'text-primary' : 'text-muted-foreground'
+                            }`}>
+                              <IconComponent className="h-5 w-5" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className={`font-semibold text-sm mb-1 ${
+                                isSelected ? 'text-primary' : 'text-foreground'
+                              }`}>
+                                {exp.title}
+                              </h4>
+                              <p className="text-xs text-muted-foreground mb-1">
+                                {exp.company}
+                              </p>
+                              <p className={`text-xs ${
+                                isSelected ? 'text-primary' : 'text-muted-foreground'
+                              }`}>
+                                {exp.date}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
 
-              {/* Wobot Intelligence Internship */}
-              <div className="relative flex items-start space-x-8">
-                <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
-                  <Briefcase className="h-8 w-8 text-primary" />
-                </div>
-                <div className="flex-1 glass-card p-8 hover:glow-effect transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary">Computer Vision Intern @ Wobot Intelligence</h3>
-                    <span className="text-accent font-medium">Sep 2021 - Jan 2022</span>
-                  </div>
-                  <p className="text-muted-foreground mb-3">Remote, India</p>
-                  <p className="text-foreground/80 leading-relaxed mb-4">
-                    Trained and deployed VGG19 model for safety gear detection achieving 93% accuracy. 
-                    Developed REST API in Go for RTSP streaming from 100+ videos and implemented OpenCV 
-                    algorithms for anomalous frame filtering.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Computer Vision</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">TensorFlow</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">OpenCV</span>
-                    <span className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">Go</span>
-                  </div>
-                </div>
-              </div>
+              {/* Right Detail Panel */}
+              <div className="lg:col-span-2 p-6 overflow-y-auto min-h-0 h-full lg:h-auto">
+                {experiences[selectedExperience] && (
+                  <>
+                    <div className="mb-6">
+                      <h3 className="text-3xl font-bold text-foreground mb-2">
+                        {experiences[selectedExperience].title}
+                      </h3>
+                      <p className="text-primary text-lg">
+                        {experiences[selectedExperience].company} | {experiences[selectedExperience].date}
+                      </p>
+                      {/* location removed per request */}
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {experiences[selectedExperience].technologies.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
 
-              {/* Bachelor's Education */}
-              {/* <div className="relative flex items-start space-x-8">
-                <div className="flex-shrink-0 w-16 h-16 glass-effect rounded-full flex items-center justify-center glow-effect">
-                  <GraduationCap className="h-8 w-8 text-primary" />
-                </div>
-                <div className="flex-1 glass-card p-8 hover:glow-effect transition-all duration-300 neural-network-bg">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary">BTech @ University of Mumbai</h3>
-                    <span className="text-accent font-medium">Aug 2018 - May 2022</span>
-                  </div>
-                  <p className="text-muted-foreground mb-3">Sardar Patel College of Engineering | GPA: 9.26/10.0</p>
-                  <p className="text-foreground/80 leading-relaxed">
-                    Bachelor of Technology with exceptional academic performance. Strong foundation in 
-                    computer science fundamentals, programming, and analytical problem-solving.
-                  </p>
-                </div>
-              </div> */}
+                    <div className="mb-6">
+                      <p className="text-foreground/80 leading-relaxed">
+                        {experiences[selectedExperience].description}
+                      </p>
+                    </div>
+
+                    <div className="mb-6">
+                      <div className="flex items-center mb-4">
+                        <Wrench className="h-5 w-5 text-primary mr-2" />
+                        <h4 className="text-lg font-semibold text-foreground">Key Achievements</h4>
+                      </div>
+                      <ul className="space-y-3">
+                        {experiences[selectedExperience].achievements.map((achievement, index) => (
+                          <li key={index} className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-foreground/80 text-sm leading-relaxed">
+                              {achievement}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -134,3 +173,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+/** Compact opportunities card to include below Experience */

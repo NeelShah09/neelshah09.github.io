@@ -18,7 +18,7 @@ const AboutSection = () => {
             <div className="space-y-6 relative lg:pl-12 lg:col-span-2">
               {/* Education Section */}
               <div className="space-y-6">
-                <h3 className="text-xl font-semibold golden-text flex items-center">
+                <h3 className="text-2xl font-semibold subsection-heading flex items-center">
                   <span className="text-4xl mr-2">🎓</span> Education
                 </h3>
                 

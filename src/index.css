@@ -8,45 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Aryan-Inspired Yellow/Black Liquid Glass Theme */
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    /* Dark Modern Purple & Indigo Liquid Glass Theme */
+    --background: 220 20% 6%;
+    --foreground: 220 10% 95%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 20% 8%;
+    --card-foreground: 220 10% 95%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 10% 95%;
 
-    --primary: 50 100% 60%;
-    --primary-foreground: 0 0% 5%;
-    --primary-glow: 50 100% 70%;
+    --primary: 239 84% 72%;
+    --primary-foreground: 220 20% 6%;
+    --primary-glow: 239 84% 82%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 10% 95%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 45 100% 55%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 262 83% 63%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 220 10% 95%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 10%;
-    --ring: 50 100% 60%;
+    --border: 220 20% 20%;
+    --input: 220 20% 10%;
+    --ring: 239 84% 72%;
 
     --radius: 0.5rem;
     
-    /* Enhanced Yellow Liquid Glass Effects */
-    --glass-bg: 0 0% 8% / 0.6;
-    --glass-border: 50 100% 60% / 0.3;
-    --gradient-primary: linear-gradient(135deg, hsl(50 100% 60% / 0.2), hsl(45 100% 55% / 0.15));
-    --gradient-glow: linear-gradient(135deg, hsl(50 100% 70% / 0.1), hsl(45 100% 65% / 0.08));
-    --shadow-glow: 0 0 40px hsl(50 100% 60% / 0.4);
-    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.8);
+    /* Dark Modern Purple & Indigo Glass Effects */
+    --glass-bg: 220 20% 8% / 0.8;
+    --glass-border: 239 84% 72% / 0.4;
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 72% / 0.15), hsl(262 83% 63% / 0.12));
+    --gradient-glow: linear-gradient(135deg, hsl(239 84% 82% / 0.08), hsl(262 83% 73% / 0.06));
+    --shadow-glow: 0 0 30px hsl(239 84% 72% / 0.4);
+    --shadow-glass: 0 8px 32px hsl(220 20% 2% / 0.8);
     --backdrop-blur: blur(16px);
 
     --sidebar-background: 0 0% 98%;
@@ -67,26 +67,26 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode - Pure black with bright yellow accents */
-    --background: 0 0% 2%;
-    --foreground: 0 0% 99%;
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 99%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 99%;
-    --primary: 50 100% 65%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 99%;
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 75%;
-    --accent: 45 100% 60%;
-    --accent-foreground: 0 0% 2%;
+    /* Dark mode - Slightly darker version for contrast */
+    --background: 220 20% 12%;
+    --foreground: 220 10% 92%;
+    --card: 220 20% 15%;
+    --card-foreground: 220 10% 92%;
+    --popover: 220 20% 15%;
+    --popover-foreground: 220 10% 92%;
+    --primary: 239 84% 72%;
+    --primary-foreground: 220 20% 12%;
+    --secondary: 220 20% 20%;
+    --secondary-foreground: 220 10% 92%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 262 83% 63%;
+    --accent-foreground: 220 20% 12%;
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 99%;
-    --border: 0 0% 15%;
-    --input: 0 0% 6%;
-    --ring: 50 100% 65%;
+    --destructive-foreground: 220 10% 92%;
+    --border: 220 20% 25%;
+    --input: 220 20% 16%;
+    --ring: 239 84% 72%;
   }
 }
 
@@ -95,19 +95,74 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* Subtle themed scrollbars */
+  * {
+    scrollbar-width: thin; /* Firefox */
+    /* Slightly highlighted thumb while keeping track subtle */
+    scrollbar-color: hsl(var(--muted)) hsl(var(--card));
+  }
+
+  /* WebKit (Chromium, Safari, Edge) */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(var(--card));
+    border-radius: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+      hsl(var(--primary) / 0.18),
+      hsl(var(--muted)) 40%,
+      hsl(var(--primary) / 0.18)
+    );
+    border-radius: 8px;
+    border: 2px solid hsl(var(--card)); /* creates subtle inset look */
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+      hsl(var(--primary) / 0.28),
+      hsl(var(--muted) / 0.95) 40%,
+      hsl(var(--primary) / 0.28)
+    );
+    box-shadow: 0 0 6px hsl(var(--primary) / 0.25);
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-weight: 500;
     background: linear-gradient(135deg, 
       hsl(var(--background)) 0%, 
-      hsl(0 0% 3%) 50%, 
-      hsl(0 0% 7%) 100%
+      hsl(220 20% 8%) 50%, 
+      hsl(220 20% 10%) 100%
     );
     background-attachment: fixed;
     min-height: 100vh;
     position: relative;
   }
+
+  /* Enhanced font weights for better readability */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  .font-semibold {
+    font-weight: 600;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
   
-  /* Yellow Tech Grid Pattern Overlay */
+  /* Dark Purple & Indigo Tech Grid Pattern Overlay */
   body::before {
     content: '';
     position: fixed;
@@ -116,17 +171,17 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(hsl(50 100% 60% / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(50 100% 60% / 0.06) 1px, transparent 1px),
-      radial-gradient(circle at 25% 25%, hsl(50 100% 60% / 0.1) 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, hsl(45 100% 55% / 0.08) 1px, transparent 1px);
+      linear-gradient(hsl(239 84% 72% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(239 84% 72% / 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 25% 25%, hsl(239 84% 72% / 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(262 83% 63% / 0.04) 1px, transparent 1px);
     background-size: 50px 50px, 50px 50px, 100px 100px, 120px 120px;
     pointer-events: none;
     z-index: -1;
     animation: float 10s ease-in-out infinite;
   }
   
-  /* Golden Particle System */
+  /* Dark Purple & Indigo Particle System */
   body::after {
     content: '';
     position: fixed;
@@ -135,10 +190,10 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(circle at 20% 20%, hsl(50 100% 60% / 0.12) 2px, transparent 2px),
-      radial-gradient(circle at 80% 30%, hsl(45 100% 55% / 0.08) 1px, transparent 1px),
-      radial-gradient(circle at 30% 80%, hsl(50 100% 70% / 0.06) 1px, transparent 1px),
-      radial-gradient(circle at 70% 70%, hsl(45 100% 65% / 0.04) 1px, transparent 1px);
+      radial-gradient(circle at 20% 20%, hsl(239 84% 72% / 0.06) 2px, transparent 2px),
+      radial-gradient(circle at 80% 30%, hsl(262 83% 63% / 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 30% 80%, hsl(239 84% 82% / 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 70% 70%, hsl(262 83% 73% / 0.025) 1px, transparent 1px);
     background-size: 180px 180px, 140px 140px, 160px 160px, 200px 200px;
     pointer-events: none;
     z-index: -1;
@@ -187,7 +242,15 @@ All colors MUST be HSL.
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    color: white;
+    text-shadow: 0 0 10px hsl(239 84% 72% / 0.3);
+  }
+  
+  .subsection-heading {
+    color: hsl(239 84% 77%);
+    text-shadow: 
+      0 0 12px hsl(239 84% 77% / 0.3),
+      0 0 20px hsl(239 84% 72% / 0.25);
   }
   
   .tech-border {
@@ -220,7 +283,7 @@ All colors MUST be HSL.
   }
   
   .matrix-rain {
-    background-image: linear-gradient(0deg, transparent 24%, hsl(50 100% 60% / 0.1) 25%, hsl(50 100% 60% / 0.1) 26%, transparent 27%, transparent 74%, hsl(45 100% 55% / 0.08) 75%, hsl(45 100% 55% / 0.08) 76%, transparent 77%, transparent);
+    background-image: linear-gradient(0deg, transparent 24%, hsl(239 84% 72% / 0.05) 25%, hsl(239 84% 72% / 0.05) 26%, transparent 27%, transparent 74%, hsl(262 83% 63% / 0.04) 75%, hsl(262 83% 63% / 0.04) 76%, transparent 77%, transparent);
     background-size: 20px 20px;
     animation: matrix-fall 10s linear infinite;
   }
@@ -325,9 +388,9 @@ All colors MUST be HSL.
   .aryan-style-card {
     @apply glass-card;
     background: linear-gradient(135deg, 
-      hsl(0 0% 8% / 0.95) 0%, 
-      hsl(0 0% 4% / 0.9) 100%);
-    border: 1px solid hsl(50 100% 60% / 0.3);
+      hsl(220 20% 8% / 0.95) 0%, 
+      hsl(220 20% 6% / 0.9) 100%);
+    border: 1px solid hsl(239 84% 72% / 0.4);
     position: relative;
     overflow: hidden;
   }
@@ -341,7 +404,7 @@ All colors MUST be HSL.
     height: 1px;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      hsl(50 100% 60%) 50%, 
+      hsl(239 84% 72%) 50%, 
       transparent 100%);
     opacity: 0.8;
   }
@@ -429,37 +492,37 @@ All colors MUST be HSL.
     50% { background-position: 100% 50%; }
   }
   
-  /* Yellow-specific effects inspired by Aryan's design */
-  .golden-glow {
+  /* Dark Purple & Indigo effects */
+  .calm-glow {
     box-shadow: 
-      0 0 20px hsl(50 100% 60% / 0.3),
-      0 0 40px hsl(50 100% 60% / 0.2),
-      inset 0 1px 0 hsl(50 100% 60% / 0.1);
+      0 0 25px hsl(239 84% 72% / 0.3),
+      0 0 40px hsl(239 84% 72% / 0.2),
+      inset 0 1px 0 hsl(239 84% 72% / 0.1);
   }
   
   .golden-text {
-    color: hsl(50 100% 60%);
+    color: hsl(239 84% 72%);
     text-shadow: 
-      0 0 10px hsl(50 100% 60% / 0.5),
-      0 0 20px hsl(50 100% 60% / 0.3);
+      0 0 15px hsl(239 84% 72% / 0.4),
+      0 0 25px hsl(239 84% 72% / 0.3);
   }
   
-  .yellow-accent-border {
-    border: 1px solid hsl(50 100% 60% / 0.4);
+  .cyan-accent-border {
+    border: 1px solid hsl(239 84% 72% / 0.4);
     background: linear-gradient(135deg, 
-      hsl(0 0% 8% / 0.9) 0%, 
-      hsl(0 0% 4% / 0.95) 100%);
+      hsl(220 20% 8% / 0.9) 0%, 
+      hsl(220 20% 6% / 0.95) 100%);
   }
   
-  .yellow-accent-border:hover {
-    border-color: hsl(50 100% 60% / 0.6);
-    box-shadow: 0 0 20px hsl(50 100% 60% / 0.2);
+  .cyan-accent-border:hover {
+    border-color: hsl(239 84% 72% / 0.6);
+    box-shadow: 0 0 25px hsl(239 84% 72% / 0.2);
   }
   
-  .tech-grid-yellow {
+  .tech-grid-calm {
     background-image: 
-      linear-gradient(hsl(50 100% 60% / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(50 100% 60% / 0.05) 1px, transparent 1px);
+      linear-gradient(hsl(239 84% 72% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(239 84% 72% / 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }

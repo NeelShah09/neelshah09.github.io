@@ -96,6 +96,20 @@ const HeroSection = () => {
                 Experience
               </a>
               <a 
+                href="#skills" 
+                className={`transition-colors font-medium cursor-pointer ${
+                  activeSection === 'skills' 
+                    ? 'golden-text' 
+                    : 'text-foreground hover:golden-text'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('[id*="skills"]')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Skills
+              </a>
+              <a 
                 href="#projects" 
                 className={`transition-colors font-medium cursor-pointer ${
                   activeSection === 'projects' 
