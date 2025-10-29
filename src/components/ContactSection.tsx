@@ -69,10 +69,16 @@ const ContactSection = () => {
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">shahneelsachin@email.com</span>
-                </div>
+                <a
+                  href="mailto:shahneelsachin@gmail.com"
+                  className="block"
+                  aria-label="Email Neel"
+                >
+                  <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
+                    <Mail className="h-5 w-5 text-primary" />
+                    <span className="text-foreground">shahneelsachin@gmail.com</span>
+                  </div>
+                </a>
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
                   <Phone className="h-5 w-5 text-primary" />
                   <span className="text-foreground">+1 (930) 215-9133</span>
