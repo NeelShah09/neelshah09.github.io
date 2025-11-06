@@ -69,7 +69,7 @@ const AboutSection = () => {
                   <div className="ml-16">
                     <h5 className="text-sm font-medium text-primary mb-2">Key Courses:</h5>
                     <div className="grid grid-cols-1 gap-1 text-xs text-muted-foreground">
-                      <span>DSA in Python, Artificial Intelligence, Mathematics & Statistics, Computer Programming(C++), Digital Electronis, Microprocessor & Microcontroller, Control Systems</span>
+                      <span>DSA in Python, Artificial Intelligence, Big Data Applications, Mathematics & Statistics, Computer Programming(C++), Digital Electronis, Microprocessor & Microcontroller, Control Systems</span>
                     </div>
                   </div>
                 </div>
@@ -83,28 +83,28 @@ const AboutSection = () => {
                   {/* Introduction */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      I’m a data and AI enthusiast driven by curiosity to uncover patterns and build solutions that make sense of complexity. Over the past few years, I’ve worked across analytics, machine learning, and computer vision — translating raw data into models, dashboards, and insights that empower better decisions.
+                    I’m an AI and data practitioner driven by curiosity to turn complex ideas into intelligent, human-centered systems. Over the past few years, I’ve worked across machine learning, generative AI, and data engineering — designing pipelines, fine-tuning models, and building end-to-end solutions that make data think, not just speak.
                     </p>
                   </div>
 
                   {/* Paragraph 1 - Academic Foundation */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      My journey began as an analyst, where I learned how to balance precision with business context. Since then, I’ve explored the technical side of AI through hands-on experience in model optimization, TensorRT conversion, and applied research in computer vision. I’m equally passionate about visualization — using tools like Power BI, Tableau, and Gephi to turn technical findings into clear, visual narratives.
+                    My journey began with analytics and experimentation, where I learned to align precision with real-world context. Since then, I’ve delved deep into the AI domain — training and optimizing LLMs, orchestrating multi-agent systems, and exploring in computer vision and natural language understanding. I also enjoy translating complexity into clarity through interactive visualizations and storytelling dashboards.
                     </p>
                   </div>
 
                   {/* Paragraph 2 - Professional Experience */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                      I believe the most impactful data work happens at the intersection of creativity and logic. Whether I’m optimizing a model or designing a dashboard, I aim to make technology more human, explainable, and accessible.
+                    I believe innovation in AI happens where engineering meets empathy. Whether it’s designing a scalable model pipeline or crafting an intuitive visualization, I strive to make intelligence transparent, interpretable, and impactful.
                     </p>
                   </div>
 
                   {/* Paragraph 3 - Innovation & Impact */}
                   <div className="space-y-2">
                     <p className="text-foreground/80 leading-relaxed">
-                    Currently, I’m seeking opportunities in AI Engineering, Data Science, or Machine Learning, where I can continue building intelligent systems that create measurable impact.
+                    Currently, I’m seeking opportunities where I can keep bridging data, models, and meaning to build systems that truly learn and adapt.
                     </p>
                   </div>
                 </div>

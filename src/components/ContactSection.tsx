@@ -85,7 +85,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">Bloomington, Indiana, United States</span>
+                  <span className="text-foreground">United States</span>
                 </div>
               </div>
 
