@@ -7,10 +7,25 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 0,
+      title: "AI Engineer",
+      company: "Project 990",
+      location: "Indiana, USA",
+      date: "August 2025 - Present",
+      icon: Wrench,
+      description: "Developed and optimized CharityBot pipelines for nonprofit intelligence by enhancing semantic retrieval with LLM-based query refinement and ranking.",
+      achievements: [
+        "Optimized CharityBot by integrating FAISS vector search, Mistral-Large query refinement, and improvements to the FastAPI-based pipeline to deliver more accurate nonprofit and grant retrieval.",
+        "Built a GPU-optimized RoBERTa Zero-Shot inference pipeline using SLURM arrays and DeepSpeed to classify 175K+ nonprofit mission statements with multi-label thematic tags at scale.",
+        "Drove gains in large-scale entity resolution accuracy by training Spark-backed EMM models that combined phonetic matching and vector similarity across 13M+ nonprofit records."
+      ],
+      technologies: ["LLM", "RAG", "FAISS", "Python"]
+    },
+    {
+      id: 1,
       title: "AI & ML Intern",
       company: "SproutsAI Inc.",
       location: "California, USA",
-      date: "July 2025 - Aug 2025",
+      date: "July 2025 - August 2025",
       icon: Brain,
       description: "Engineered a multi-agent AI platform translating natural language to MongoDB queries with automated Plotly visualizations, reducing time-to-insight by 80% and improving query accuracy by 50% using Neo4j and Qdrant for context retrieval.",
       achievements: [
@@ -21,7 +36,7 @@ const ExperienceSection = () => {
       technologies: ["Multi-Agent AI", "MongoDB", "Neo4j", "Qdrant", "Python", "Plotly"]
     },
     {
-      id: 1,
+      id: 2,
       title: "Deputy Manager II",
       company: "ICICI Bank Limited",
       location: "Core Banking Department | India",
@@ -38,11 +53,11 @@ const ExperienceSection = () => {
       technologies: ["ETL Pipelines", "Apache Airflow", "Oracle SQL", "Predictive Analytics", "Python"]
     },
     {
-      id: 2,
+      id: 3,
       title: "Computer Vision Intern",
       company: "Wobot Intelligence",
       location: "Remote, India",
-      date: "Sep 2021 - Jan 2022",
+      date: "September 2021 - January 2022",
       icon: Cloud,
       description: "Trained and deployed VGG19 model for safety gear detection achieving 93% accuracy. Developed REST API in Go for RTSP streaming from 100+ videos and implemented OpenCV algorithms for anomalous frame filtering.",
       achievements: [
