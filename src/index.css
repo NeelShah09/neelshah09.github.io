@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark Modern Purple & Indigo Liquid Glass Theme */
+    /* Dark Modern Blue Liquid Glass Theme */
     --background: 220 20% 6%;
     --foreground: 220 10% 95%;
 
@@ -18,9 +18,9 @@ All colors MUST be HSL.
     --popover: 220 20% 8%;
     --popover-foreground: 220 10% 95%;
 
-    --primary: 239 84% 72%;
+    --primary: 210 90% 65%;
     --primary-foreground: 220 20% 6%;
-    --primary-glow: 239 84% 82%;
+    --primary-glow: 210 90% 75%;
 
     --secondary: 220 20% 15%;
     --secondary-foreground: 220 10% 95%;
@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --muted: 220 20% 12%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 262 83% 63%;
+    --accent: 225 80% 60%;
     --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,16 +36,16 @@ All colors MUST be HSL.
 
     --border: 220 20% 20%;
     --input: 220 20% 10%;
-    --ring: 239 84% 72%;
+    --ring: 210 90% 65%;
 
     --radius: 0.5rem;
     
-    /* Dark Modern Purple & Indigo Glass Effects */
+    /* Dark Modern Blue Glass Effects */
     --glass-bg: 220 20% 8% / 0.8;
-    --glass-border: 239 84% 72% / 0.4;
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 72% / 0.15), hsl(262 83% 63% / 0.12));
-    --gradient-glow: linear-gradient(135deg, hsl(239 84% 82% / 0.08), hsl(262 83% 73% / 0.06));
-    --shadow-glow: 0 0 30px hsl(239 84% 72% / 0.4);
+    --glass-border: 210 90% 65% / 0.4;
+    --gradient-primary: linear-gradient(135deg, hsl(210 90% 65% / 0.15), hsl(225 80% 60% / 0.12));
+    --gradient-glow: linear-gradient(135deg, hsl(210 90% 75% / 0.08), hsl(225 80% 70% / 0.06));
+    --shadow-glow: 0 0 30px hsl(210 90% 65% / 0.4);
     --shadow-glass: 0 8px 32px hsl(220 20% 2% / 0.8);
     --backdrop-blur: blur(16px);
 
@@ -74,19 +74,19 @@ All colors MUST be HSL.
     --card-foreground: 220 10% 92%;
     --popover: 220 20% 15%;
     --popover-foreground: 220 10% 92%;
-    --primary: 239 84% 72%;
+    --primary: 210 90% 65%;
     --primary-foreground: 220 20% 12%;
     --secondary: 220 20% 20%;
     --secondary-foreground: 220 10% 92%;
     --muted: 220 20% 18%;
     --muted-foreground: 220 10% 60%;
-    --accent: 262 83% 63%;
+    --accent: 225 80% 60%;
     --accent-foreground: 220 20% 12%;
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 220 10% 92%;
     --border: 220 20% 25%;
     --input: 220 20% 16%;
-    --ring: 239 84% 72%;
+    --ring: 210 90% 65%;
   }
 }
 
@@ -171,10 +171,10 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(hsl(239 84% 72% / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(239 84% 72% / 0.04) 1px, transparent 1px),
-      radial-gradient(circle at 25% 25%, hsl(239 84% 72% / 0.05) 1px, transparent 1px),
-      radial-gradient(circle at 75% 75%, hsl(262 83% 63% / 0.04) 1px, transparent 1px);
+      linear-gradient(hsl(210 90% 65% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 90% 65% / 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 25% 25%, hsl(210 90% 65% / 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsl(225 80% 60% / 0.04) 1px, transparent 1px);
     background-size: 50px 50px, 50px 50px, 100px 100px, 120px 120px;
     pointer-events: none;
     z-index: -1;
@@ -190,10 +190,10 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(circle at 20% 20%, hsl(239 84% 72% / 0.06) 2px, transparent 2px),
-      radial-gradient(circle at 80% 30%, hsl(262 83% 63% / 0.04) 1px, transparent 1px),
-      radial-gradient(circle at 30% 80%, hsl(239 84% 82% / 0.03) 1px, transparent 1px),
-      radial-gradient(circle at 70% 70%, hsl(262 83% 73% / 0.025) 1px, transparent 1px);
+      radial-gradient(circle at 20% 20%, hsl(210 90% 65% / 0.06) 2px, transparent 2px),
+      radial-gradient(circle at 80% 30%, hsl(225 80% 60% / 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 30% 80%, hsl(210 90% 75% / 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 70% 70%, hsl(225 80% 70% / 0.025) 1px, transparent 1px);
     background-size: 180px 180px, 140px 140px, 160px 160px, 200px 200px;
     pointer-events: none;
     z-index: -1;
@@ -243,14 +243,14 @@ All colors MUST be HSL.
   
   .gradient-text {
     color: white;
-    text-shadow: 0 0 10px hsl(239 84% 72% / 0.3);
+    text-shadow: 0 0 10px hsl(210 90% 65% / 0.3);
   }
   
   .subsection-heading {
-    color: hsl(239 84% 77%);
+    color: hsl(210 90% 70%);
     text-shadow: 
-      0 0 12px hsl(239 84% 77% / 0.3),
-      0 0 20px hsl(239 84% 72% / 0.25);
+      0 0 12px hsl(210 90% 70% / 0.3),
+      0 0 20px hsl(210 90% 65% / 0.25);
   }
   
   .tech-border {
@@ -283,7 +283,7 @@ All colors MUST be HSL.
   }
   
   .matrix-rain {
-    background-image: linear-gradient(0deg, transparent 24%, hsl(239 84% 72% / 0.05) 25%, hsl(239 84% 72% / 0.05) 26%, transparent 27%, transparent 74%, hsl(262 83% 63% / 0.04) 75%, hsl(262 83% 63% / 0.04) 76%, transparent 77%, transparent);
+    background-image: linear-gradient(0deg, transparent 24%, hsl(210 90% 65% / 0.05) 25%, hsl(210 90% 65% / 0.05) 26%, transparent 27%, transparent 74%, hsl(225 80% 60% / 0.04) 75%, hsl(225 80% 60% / 0.04) 76%, transparent 77%, transparent);
     background-size: 20px 20px;
     animation: matrix-fall 10s linear infinite;
   }
@@ -390,7 +390,7 @@ All colors MUST be HSL.
     background: linear-gradient(135deg, 
       hsl(220 20% 8% / 0.95) 0%, 
       hsl(220 20% 6% / 0.9) 100%);
-    border: 1px solid hsl(239 84% 72% / 0.4);
+    border: 1px solid hsl(210 90% 65% / 0.4);
     position: relative;
     overflow: hidden;
   }
@@ -404,7 +404,7 @@ All colors MUST be HSL.
     height: 1px;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      hsl(239 84% 72%) 50%, 
+      hsl(210 90% 65%) 50%, 
       transparent 100%);
     opacity: 0.8;
   }
@@ -492,37 +492,37 @@ All colors MUST be HSL.
     50% { background-position: 100% 50%; }
   }
   
-  /* Dark Purple & Indigo effects */
+  /* Dark Blue effects */
   .calm-glow {
     box-shadow: 
-      0 0 25px hsl(239 84% 72% / 0.3),
-      0 0 40px hsl(239 84% 72% / 0.2),
-      inset 0 1px 0 hsl(239 84% 72% / 0.1);
+      0 0 25px hsl(210 90% 65% / 0.3),
+      0 0 40px hsl(210 90% 65% / 0.2),
+      inset 0 1px 0 hsl(210 90% 65% / 0.1);
   }
   
   .golden-text {
-    color: hsl(239 84% 72%);
+    color: hsl(210 90% 65%);
     text-shadow: 
-      0 0 15px hsl(239 84% 72% / 0.4),
-      0 0 25px hsl(239 84% 72% / 0.3);
+      0 0 15px hsl(210 90% 65% / 0.4),
+      0 0 25px hsl(210 90% 65% / 0.3);
   }
   
   .cyan-accent-border {
-    border: 1px solid hsl(239 84% 72% / 0.4);
+    border: 1px solid hsl(210 90% 65% / 0.4);
     background: linear-gradient(135deg, 
       hsl(220 20% 8% / 0.9) 0%, 
       hsl(220 20% 6% / 0.95) 100%);
   }
   
   .cyan-accent-border:hover {
-    border-color: hsl(239 84% 72% / 0.6);
-    box-shadow: 0 0 25px hsl(239 84% 72% / 0.2);
+    border-color: hsl(210 90% 65% / 0.6);
+    box-shadow: 0 0 25px hsl(210 90% 65% / 0.2);
   }
   
   .tech-grid-calm {
     background-image: 
-      linear-gradient(hsl(239 84% 72% / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(239 84% 72% / 0.03) 1px, transparent 1px);
+      linear-gradient(hsl(210 90% 65% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 90% 65% / 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }

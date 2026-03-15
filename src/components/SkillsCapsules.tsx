@@ -37,6 +37,7 @@ const categories: Category[] = [
       { name: "LangGraph", subtitle: "NLP", icon: "https://cdn.simpleicons.org/langgraph" },
       { name: "Hugging Face", subtitle: "NLP", icon: "https://cdn.simpleicons.org/huggingface" },
       { name: "Qdrant", subtitle: "Vector DB", icon: "/skills/qdrant.svg" },
+      { name: "FAISS", subtitle: "Vector Search", icon: "https://cdn.simpleicons.org/meta" },
     ],
   },
   {
@@ -110,9 +111,9 @@ const SkillsCapsules = () => {
   const [active, setActive] = useState(categories[0].key);
   const current = categories.find((c) => c.key === active) ?? categories[0];
   return (
-    <section id="skills" className="py-16">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 gradient-text">Skills</h2>
+    <section id="skills" className="py-12 sm:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 gradient-text">Skills</h2>
 
         {/* Centered, larger tabs */}
         <div className="flex justify-center mb-6">
@@ -121,7 +122,7 @@ const SkillsCapsules = () => {
               <button
                 key={c.key}
                 onClick={() => setActive(c.key)}
-                className={`px-4 py-2 rounded-full text-base md:text-lg transition-colors ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base md:text-lg transition-colors ${
                   active === c.key
                     ? 'bg-primary/20 text-primary border border-primary/40'
                     : 'bg-muted/40 text-foreground/90 hover:bg-muted/60 border border-border/50'

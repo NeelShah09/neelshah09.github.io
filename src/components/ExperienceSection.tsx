@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Briefcase, GraduationCap, Cloud, Brain, Database, Wrench } from "lucide-react";
+import { Cloud, Brain, Database, Wrench, X } from "lucide-react";
 
 const ExperienceSection = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
+  const [modalExp, setModalExp] = useState<number | null>(null);
 
   const experiences = [
     {
@@ -10,12 +11,12 @@ const ExperienceSection = () => {
       title: "AI Engineer",
       company: "Project 990",
       location: "Indiana, USA",
-      date: "August 2025 - Present",
+      date: "September 2025 - Present",
       icon: Wrench,
       description: "Developed and optimized CharityBot pipelines for nonprofit intelligence by enhancing semantic retrieval with LLM-based query refinement and ranking.",
       achievements: [
-        "Optimized CharityBot by integrating FAISS vector search, Mistral-Large query refinement, and improvements to the FastAPI-based pipeline to deliver more accurate nonprofit and grant retrieval.",
-        "Built a GPU-optimized RoBERTa Zero-Shot inference pipeline using SLURM arrays and DeepSpeed to classify 175K+ nonprofit mission statements with multi-label thematic tags at scale.",
+        "Optimized a CharityBot by engineering a hybrid retrieval architecture fusing BM25 and vector similarity search(FAISS), boosting the retrieval accuracy and improving overall MRR to 0.919",
+        "Built a GPU-optimized BERT-based Zero-Shot inference pipeline using SLURM arrays and DeepSpeed to classify 175K+ nonprofit mission statements with multi-label thematic tags at scale.",
         "Drove gains in large-scale entity resolution accuracy by training Spark-backed EMM models that combined phonetic matching and vector similarity across 13M+ nonprofit records."
       ],
       technologies: ["LLM", "RAG", "FAISS", "Python"]
@@ -37,7 +38,7 @@ const ExperienceSection = () => {
     },
     {
       id: 2,
-      title: "Deputy Manager II",
+      title: "Data Analyst & Engineer",
       company: "ICICI Bank Limited",
       location: "Core Banking Department | India",
       date: "June 2022 - July 2024",
@@ -71,121 +72,174 @@ const ExperienceSection = () => {
     }
   ];
 
+  const activeModal = modalExp !== null ? experiences[modalExp] : null;
+
   return (
-    <section id="experience" className="py-16 relative">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 gradient-text">
+    <section id="experience" className="py-12 sm:py-16 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 gradient-text">
           Experience
         </h2>
-        
+
         <div className="max-w-7xl mx-auto">
-          <div className="glass-card rounded-xl overflow-hidden">
-            <div className="grid lg:grid-cols-3 gap-0 h-[75vh] lg:h-auto lg:max-h-[75vh] min-h-0">
-              {/* Left Navigation Panel */}
-              <div className="lg:col-span-1 bg-card/50 border-r border-border/50 overflow-y-auto min-h-0 h-full lg:h-auto">
-                <div className="p-4">
-                  <div className="space-y-3">
-                    {experiences.map((exp, index) => {
-                      const IconComponent = exp.icon;
-                      const isSelected = selectedExperience === index;
-                      
-                      return (
-                        <div
-                          key={exp.id}
-                          onClick={() => setSelectedExperience(index)}
-                          className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                            isSelected 
-                              ? 'bg-primary/20 border-l-4 border-primary' 
-                              : 'hover:bg-muted/30 border-l-4 border-transparent'
-                          }`}
-                        >
-                          <div className="flex items-start space-x-3">
-                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                              isSelected ? 'text-primary' : 'text-muted-foreground'
-                            }`}>
-                              <IconComponent className="h-5 w-5" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h4 className={`font-semibold text-sm mb-1 ${
-                                isSelected ? 'text-primary' : 'text-foreground'
-                              }`}>
-                                {exp.title}
-                              </h4>
-                              <p className="text-xs text-muted-foreground mb-1">
-                                {exp.company}
-                              </p>
-                              <p className={`text-xs ${
-                                isSelected ? 'text-primary' : 'text-muted-foreground'
-                              }`}>
-                                {exp.date}
-                              </p>
-                            </div>
+
+          {/* ── Desktop layout (lg+) ── */}
+          <div className="hidden lg:block glass-card rounded-xl overflow-hidden">
+            <div className="grid lg:grid-cols-3 lg:max-h-[75vh]">
+              {/* Left nav */}
+              <div className="lg:col-span-1 bg-card/50 border-r border-border/50 overflow-y-auto">
+                <div className="p-4 space-y-3">
+                  {experiences.map((exp, index) => {
+                    const Icon = exp.icon;
+                    const isSelected = selectedExperience === index;
+                    return (
+                      <div
+                        key={exp.id}
+                        onClick={() => setSelectedExperience(index)}
+                        className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
+                          isSelected
+                            ? "bg-primary/20 border-l-4 border-primary"
+                            : "hover:bg-muted/30 border-l-4 border-transparent"
+                        }`}
+                      >
+                        <div className="flex items-start space-x-3">
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${isSelected ? "text-primary" : "text-muted-foreground"}`}>
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className={`font-semibold text-sm mb-1 ${isSelected ? "text-primary" : "text-foreground"}`}>{exp.title}</h4>
+                            <p className="text-xs text-muted-foreground mb-1">{exp.company}</p>
+                            <p className={`text-xs ${isSelected ? "text-primary" : "text-muted-foreground"}`}>{exp.date}</p>
                           </div>
                         </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Right Detail Panel */}
-              <div className="lg:col-span-2 p-6 overflow-y-auto min-h-0 h-full lg:h-auto">
+              {/* Right detail */}
+              <div className="lg:col-span-2 p-6 overflow-y-auto">
                 {experiences[selectedExperience] && (
                   <>
                     <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-foreground mb-2">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
                         {experiences[selectedExperience].title}
                       </h3>
-                      <p className="text-primary text-lg">
+                      <p className="text-primary text-base lg:text-lg">
                         {experiences[selectedExperience].company} | {experiences[selectedExperience].date}
                       </p>
-                      {/* location removed per request */}
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {experiences[selectedExperience].technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full"
-                          >
-                            {tech}
-                          </span>
+                        {experiences[selectedExperience].technologies.map((tech, i) => (
+                          <span key={i} className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full">{tech}</span>
                         ))}
                       </div>
                     </div>
-
                     <div className="mb-6">
-                      <p className="text-foreground/80 leading-relaxed">
-                        {experiences[selectedExperience].description}
-                      </p>
+                      <p className="text-foreground/80 leading-relaxed">{experiences[selectedExperience].description}</p>
                     </div>
-
-                    <div className="mb-6">
+                    <div>
                       <div className="flex items-center mb-4">
                         <Wrench className="h-5 w-5 text-primary mr-2" />
                         <h4 className="text-lg font-semibold text-foreground">Key Achievements</h4>
                       </div>
                       <ul className="space-y-3">
-                        {experiences[selectedExperience].achievements.map((achievement, index) => (
-                          <li key={index} className="flex items-start space-x-3">
+                        {experiences[selectedExperience].achievements.map((a, i) => (
+                          <li key={i} className="flex items-start space-x-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-foreground/80 text-sm leading-relaxed">
-                              {achievement}
-                            </span>
+                            <span className="text-foreground/80 text-sm leading-relaxed">{a}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-
-                    
                   </>
                 )}
               </div>
             </div>
           </div>
+
+          {/* ── Mobile layout (< lg): tap a card → modal ── */}
+          <div className="lg:hidden space-y-3">
+            {experiences.map((exp) => {
+              const Icon = exp.icon;
+              return (
+                <button
+                  key={exp.id}
+                  onClick={() => setModalExp(exp.id)}
+                  className="w-full text-left glass-card p-4 rounded-xl hover:glow-effect transition-all duration-200 active:scale-[0.98]"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-sm text-foreground">{exp.title}</h4>
+                      <p className="text-xs text-primary mt-0.5">{exp.company}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{exp.date}</p>
+                    </div>
+                    <span className="text-muted-foreground text-lg leading-none mt-1">›</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      {/* ── Modal popup ── */}
+      {activeModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-background/80 backdrop-blur-sm"
+          onClick={() => setModalExp(null)}
+        >
+          <div
+            className="glass-card w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl p-6 space-y-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal header */}
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">{activeModal.title}</h3>
+                <p className="text-sm text-primary mt-0.5">{activeModal.company}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{activeModal.date}</p>
+              </div>
+              <button
+                onClick={() => setModalExp(null)}
+                className="text-muted-foreground hover:golden-text transition-colors flex-shrink-0 mt-0.5"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Tech tags */}
+            <div className="flex flex-wrap gap-2">
+              {activeModal.technologies.map((tech, i) => (
+                <span key={i} className="px-2 py-1 text-xs bg-primary/20 text-primary rounded-full">{tech}</span>
+              ))}
+            </div>
+
+            {/* Description */}
+            <p className="text-sm text-foreground/80 leading-relaxed">{activeModal.description}</p>
+
+            {/* Achievements */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                <Wrench className="h-4 w-4 text-primary" /> Key Achievements
+              </h4>
+              <ul className="space-y-3">
+                {activeModal.achievements.map((a, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80 leading-relaxed">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
 export default ExperienceSection;
-/** Compact opportunities card to include below Experience */

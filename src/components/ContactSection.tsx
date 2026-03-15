@@ -51,16 +51,16 @@ const ContactSection = () => {
     }
   }
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-12 sm:py-20 relative">
       
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 gradient-text">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 gradient-text">
           Get In Touch
         </h2>
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 max-w-6xl mx-auto items-stretch">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glass-card p-8 h-full">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="glass-card p-5 sm:p-8 h-full">
               <h3 className="text-2xl font-semibold subsection-heading mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 I'm always interested in discussing new opportunities in data science, 
@@ -79,10 +79,10 @@ const ContactSection = () => {
                     <span className="text-foreground">shahneelsachin@gmail.com</span>
                   </div>
                 </a>
-                <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
+                {/* <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
                   <Phone className="h-5 w-5 text-primary" />
                   <span className="text-foreground">+1 (930) 215-9133</span>
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:glow-effect transition-all duration-300">
                   <MapPin className="h-5 w-5 text-primary" />
                   <span className="text-foreground">United States</span>
@@ -122,7 +122,7 @@ const ContactSection = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="glass-card p-8 h-full">
+          <div className="glass-card p-5 sm:p-8 h-full">
             <h3 className="text-2xl font-semibold subsection-heading mb-4">Send a Message</h3>
             <form className="space-y-3" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4">

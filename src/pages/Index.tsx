@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import OpportunitiesCard from "@/components/OpportunitiesCard";
 // import SkillsSection from "@/components/SkillsSection";
 // import TechnicalSkillsCompact from "@/components/TechnicalSkillsCompact";
 import SkillsCapsules from "@/components/SkillsCapsules";
@@ -12,11 +11,10 @@ import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen lg:pl-16">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
-      <OpportunitiesCard />
       <SkillsCapsules />
       {/* <InteractiveSkillsRadar /> */}
       <ProjectsSection />
