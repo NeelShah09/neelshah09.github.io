@@ -132,6 +132,10 @@ All colors MUST be HSL.
     box-shadow: 0 0 6px hsl(var(--primary) / 0.25);
   }
 
+  html {
+    background-color: hsl(220 20% 6%);
+  }
+
   body {
     @apply bg-background text-foreground;
     font-weight: 500;
@@ -140,7 +144,6 @@ All colors MUST be HSL.
       hsl(220 20% 8%) 50%, 
       hsl(220 20% 10%) 100%
     );
-    background-attachment: fixed;
     min-height: 100vh;
     position: relative;
   }
@@ -178,10 +181,9 @@ All colors MUST be HSL.
     background-size: 50px 50px, 50px 50px, 100px 100px, 120px 120px;
     pointer-events: none;
     z-index: -1;
-    animation: float 10s ease-in-out infinite;
   }
   
-  /* Dark Purple & Indigo Particle System */
+  /* Dark Blue Particle System */
   body::after {
     content: '';
     position: fixed;
@@ -197,7 +199,6 @@ All colors MUST be HSL.
     background-size: 180px 180px, 140px 140px, 160px 160px, 200px 200px;
     pointer-events: none;
     z-index: -1;
-    animation: float 15s ease-in-out infinite reverse;
   }
 }
 
